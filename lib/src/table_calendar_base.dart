@@ -192,15 +192,13 @@ class _TableCalendarBaseState extends State<TableCalendarBase> {
           child: ValueListenableBuilder<double>(
             valueListenable: _pageHeight,
             builder: (context, value, child) {
-              final height =
-                  constraints.hasBoundedHeight ? constraints.maxHeight : value;
-
+              final height = constraints.hasBoundedHeight ? constraints.maxHeight : value;
               return AnimatedSize(
                 duration: widget.formatAnimationDuration,
                 curve: widget.formatAnimationCurve,
                 alignment: Alignment.topCenter,
                 child: SizedBox(
-                  height: height,
+                  height: widget.calendarFormat == CalendarFormat.none ? 0 : height,
                   child: child,
                 ),
               );

@@ -168,6 +168,7 @@ class CalendarCore extends StatelessWidget {
 
     switch (format) {
       case CalendarFormat.month:
+      case CalendarFormat.none:
         day = DateTime.utc(prevFocusedDay.year, prevFocusedDay.month + pageDif);
         break;
       case CalendarFormat.twoWeeks:
@@ -194,6 +195,7 @@ class CalendarCore extends StatelessWidget {
 
     switch (format) {
       case CalendarFormat.month:
+      case CalendarFormat.none:
         day = DateTime.utc(firstDay.year, firstDay.month + pageIndex);
         break;
       case CalendarFormat.twoWeeks:
